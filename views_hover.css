@@ -1,0 +1,12 @@
+.views-hover{width: 120px;position: relative;}
+.hover-content {
+  z-index:100;
+  position: absolute;
+  padding: 10px;
+  display:none;
+  width: 350px;
+  background-color: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 0 0 5px #E3E3E3;
+}

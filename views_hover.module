@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_init().
+ */
+function views_hover_init() {
+  drupal_add_js(drupal_get_path('module', 'views_hover') .'/js/views_hover.js');
+  drupal_add_css(drupal_get_path('module', 'views_hover') .'/views_hover.css');
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function views_hover_theme($existing, $type, $theme, $path) {
+  return array(
+    'views_hover' => array(
+      'variables' => array('hover' => NULL, 'content' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function views_hover_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+function theme_views_hover($variables) {
+  $output = '<div class="views-hover">';
+  $output .= filter_xss_admin($variables['content']);
+  $output .= '<div class="hover-content">' . filter_xss_admin($variables['hover']) . '</div>';
+  $output .= '</div>';
+  return $output;
+}

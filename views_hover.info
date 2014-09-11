@@ -1,0 +1,14 @@
+name = Views Hover
+description = views hover.
+package = Views
+dependencies[] = views
+core = 7.x
+
+; Views handlers
+files[] = handlers/views_hover_handler_field_hover.inc
+
+version = "7.x-1.0"
+core = "7.x"
+project = "views_hover"
+
+
